@@ -1,0 +1,14 @@
+{
+	"name": "fluxcore/framework",
+	"description": "The framework for FluxCore.",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/fluxcore/components"
+		}
+	],
+	"require": {
+		"fluxcore/components": "dev-master"
+	},
+	"minimum-stability": "dev"
+}

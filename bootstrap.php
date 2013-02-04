@@ -4,6 +4,10 @@
 define('FC_ROOT', __DIR__.'/');
 
 // Require composer autoloader.
-require_once FC_ROOT.'vendor/autoload.php';
+$autoload = require_once FC_ROOT.'vendor/autoload.php';
+
+// Create and register AliasLoader.
+$aliasLoader = new FluxCore\Core\AliasLoader();
+$aliasLoader->register();
 
 // TODO: Setup everything for index or any other abstraction of the system.

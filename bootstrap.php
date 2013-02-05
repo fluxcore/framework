@@ -6,11 +6,17 @@ define('FC_ROOT', __DIR__.'/');
 // Require composer autoloader.
 $autoload = require_once FC_ROOT.'vendor/autoload.php';
 
-// Create application/IoC container.
+// Create application.
 $app = new FluxCore\Core\Application;
 
 // Create and register AliasLoader.
-$app['autoload.alias'] = new FluxCore\Core\AliasLoader();
+$app['autoload.alias'] = new FluxCore\Core\AliasLoader;
 $app['autoload.alias']->register();
+
+// Setup service manager and add core services.
+$app['service'] = new FluxCore\Core\Service\ServiceManager($app);
+$app['service']->add('FluxCore\Config\ConfigServiceProvider');
+
+var_dump($app['config']->make('app'));
 
 // TODO: Setup everything for index or any other abstraction of the system.

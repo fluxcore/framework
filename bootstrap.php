@@ -9,6 +9,9 @@ $autoload = require_once FC_ROOT.'vendor/autoload.php';
 // Create application.
 $app = new FluxCore\Core\Application;
 
+// Setup facade.
+FluxCore\Core\Facade::setFacadeApplication($app);
+
 // Setup paths.
 $app['config.path'] = FC_ROOT.'/app/config/';
 
@@ -19,3 +22,15 @@ $app['autoload.alias']->register();
 // Setup service manager and add core services.
 $app['service'] = new FluxCore\Core\Service\ServiceManager($app);
 $app['service']->add('FluxCore\Config\ConfigServiceProvider');
+
+// Application configuration.
+$appConfig = FluxCore\Config\ConfigFacade::make('app');
+{
+	// Setup services.
+	foreach($appConfig->services as $serviceProvider) {
+		$app['service']->add($serviceProvider);
+	}
+
+	// Setup aliases.
+	$app['autoload.alias']->addAliasMap($appConfig->aliases);
+}

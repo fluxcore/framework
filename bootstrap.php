@@ -1,5 +1,11 @@
 <?php
 
+use FluxCore\Config\ConfigFacade;
+use FluxCore\Core\AliasLoader;
+use FluxCore\Core\Application;
+use FluxCore\Core\Facade;
+use FluxCore\Core\Service\ServiceManager;
+
 // Define the FluxCore root directory.
 define('FC_ROOT', __DIR__.'/');
 
@@ -7,24 +13,24 @@ define('FC_ROOT', __DIR__.'/');
 $autoload = require_once FC_ROOT.'vendor/autoload.php';
 
 // Create application.
-$app = new FluxCore\Core\Application;
+$app = new Application;
 
 // Setup facade.
-FluxCore\Core\Facade::setFacadeApplication($app);
+Facade::setFacadeApplication($app);
 
 // Setup paths.
 $app['config.path'] = FC_ROOT.'/app/config/';
 
 // Create and register AliasLoader.
-$app['autoload.alias'] = new FluxCore\Core\AliasLoader;
+$app['autoload.alias'] = new AliasLoader;
 $app['autoload.alias']->register();
 
 // Setup service manager and add core services.
-$app['service'] = new FluxCore\Core\Service\ServiceManager($app);
+$app['service'] = new ServiceManager($app);
 $app['service']->add('FluxCore\Config\ConfigServiceProvider');
 
 // Application configuration.
-$appConfig = FluxCore\Config\ConfigFacade::make('app');
+$appConfig = ConfigFacade::make('app');
 {
 	// Setup services.
 	foreach($appConfig->services as $serviceProvider) {

@@ -3,4 +3,7 @@
 // Require bootstrap.
 require_once '../bootstrap.php';
 
-// TODO: Route execution routine.
+//Route::resolve(
+//	Request::get('p', '/'),
+//	Request::getFacadeObject()
+//);

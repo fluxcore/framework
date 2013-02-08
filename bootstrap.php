@@ -40,3 +40,6 @@ $appConfig = ConfigFacade::make('app');
 	// Setup aliases.
 	$app['autoload.alias']->addAliasMap($appConfig->aliases);
 }
+
+// Require routes.
+require_once FC_ROOT.'app/routes.php';

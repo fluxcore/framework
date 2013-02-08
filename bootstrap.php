@@ -19,7 +19,7 @@ $app = new Application;
 Facade::setFacadeApplication($app);
 
 // Setup paths.
-$app['config.path'] = FC_ROOT.'/app/config/';
+$app['path'] = FC_ROOT.'/app/';
 
 // Create and register AliasLoader.
 $app['autoload.alias'] = new AliasLoader;
@@ -42,4 +42,4 @@ $appConfig = ConfigFacade::make('app');
 }
 
 // Require routes.
-require_once FC_ROOT.'app/routes.php';
+require_once $app['path'].'routes.php';

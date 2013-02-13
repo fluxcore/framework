@@ -7,3 +7,8 @@ require_once '../bootstrap.php';
 //	Request::get('p', '/'),
 //	Request::getFacadeObject()
 //);
+
+echo Route::resolve(
+	Request::get('p', '/'),
+	Request::getFacadeObject()
+);

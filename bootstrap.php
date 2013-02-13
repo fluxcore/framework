@@ -14,6 +14,7 @@ $autoload = require_once FC_ROOT.'vendor/autoload.php';
 
 // Create application.
 $app = new Application;
+$app['app'] = $app;
 
 // Setup facade.
 Facade::setFacadeApplication($app);
@@ -43,3 +44,6 @@ $appConfig = ConfigFacade::make('app');
 
 // Require routes.
 require_once $app['path'].'routes.php';
+
+// Require bindings.
+require_once $app['path'].'bindings.php';

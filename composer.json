@@ -10,5 +10,10 @@
 	"require": {
 		"fluxcore/components": "dev-master"
 	},
+	"autoload": {
+		"classmap": [
+			"app/controller"
+		]
+	},
 	"minimum-stability": "dev"
 }

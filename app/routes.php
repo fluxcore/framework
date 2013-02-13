@@ -2,5 +2,5 @@
 
 Route::add('/', 'get', function()
 {
-	return 'Home';
+	return Controller::make('Home')->index();
 });

@@ -8,7 +8,9 @@
 		}
 	],
 	"require": {
-		"fluxcore/components": "dev-master"
+		"fluxcore/components": "dev-master",
+		"illuminate/view": "dev-master",
+		"illuminate/database": "dev-master",
 	},
 	"autoload": {
 		"classmap": [

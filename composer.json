@@ -12,7 +12,8 @@
 	},
 	"autoload": {
 		"classmap": [
-			"app/controller"
+			"app/controller",
+			"app/model"
 		]
 	},
 	"minimum-stability": "dev"

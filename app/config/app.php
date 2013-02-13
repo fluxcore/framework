@@ -8,6 +8,7 @@ return array(
 		'Illuminate\Filesystem\FilesystemServiceProvider',
 		'Illuminate\Events\EventServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+		'Illuminate\Database\DatabaseServiceProvider',
 	),
 
 	'aliases'	=> array(
@@ -17,6 +18,7 @@ return array(
 		'Route'			=> 'FluxCore\Routing\RoutingFacade',
 		'Request'		=> 'FluxCore\Wrapper\RequestFacade',
 		'View'			=> 'FluxCore\Wrapper\ViewFacade',
+		'Model'			=> 'Illuminate\Database\Eloquent\Model',
 	),
 	
 );

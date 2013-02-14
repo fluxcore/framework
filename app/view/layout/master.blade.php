@@ -1,11 +1,15 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>FluxCore - {{ $title }}</title>
+		<base href="/fluxcore/"/>
+
+		<title>FluxCore - @yield('title')</title>
+		
+		<link rel="stylesheet" href="css/reset.css"/>
+		@yield('head')
 	</head>
 	<body>
-		@yield('content')
-		@yield('sub')
+		@yield('body')
 	</body>
 </html>

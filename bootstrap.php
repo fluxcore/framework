@@ -47,3 +47,6 @@ require_once $app['path'].'routes.php';
 
 // Require bindings.
 require_once $app['path'].'bindings.php';
+
+// Require constants.
+require_once $app['path'].'constants.php';

@@ -1,0 +1,14 @@
+body { color: #333; font-size: 14px; font-family: sans-serif; }
+
+#debug {  }
+#debug > * { background: #ddd; border-radius: 10px; margin-top: 10px; }
+#debug h2 { font-size: 40px; font-weight: bold; text-align: center; background: none; }
+#debug h3 { font-size: 24px; font-weight: bold; text-align: center; background: none; }
+#debug h2 span, #debug h3 span { color: #f24949; }
+#debug p { width: 800px; margin: 10px auto; padding: 10px; }
+#debug p small { font-size: 10px; background: #bbb; border-radius: 5px; margin-top: 10px; padding: 5px; display: block; }
+#debug .table-container { width: 1000px; margin: 10px auto; /*padding: 10px;*/ }
+#debug table { width: 1000px; border-collapse: separate; border-spacing: 10px; }
+#debug table tr > * { background: #bbb; border-radius: 5px; }
+#debug table th { font-size: 20px; font-weight: bold; line-height: 40px; }
+#debug table td { font-size: 12px; padding: 5px; }

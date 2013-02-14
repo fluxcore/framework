@@ -1,4 +1,11 @@
+# Default ignores.
+
 vendor/
 composer.phar
 composer.lock
 .DS_Store
+
+# App ignores.
+
+!app/storage/views/.gitkeep
+app/storage/views/*

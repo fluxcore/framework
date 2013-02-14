@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title')
+	Debug - 
+@stop
+
 @section('head')
 	<link rel="stylesheet" href="css/debug.css"/>
 @stop

@@ -38,6 +38,9 @@ $appConfig = ConfigFacade::make('app');
 		$app['service']->add($serviceProvider);
 	}
 
+	// Boot services.
+	$app['service']->boot();
+
 	// Setup aliases.
 	$app['autoload.alias']->addAliasMap($appConfig->aliases);
 }

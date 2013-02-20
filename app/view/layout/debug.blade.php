@@ -5,7 +5,7 @@
 @stop
 
 @section('head')
-	<link rel="stylesheet" href="css/debug.css"/>
+	<link rel="stylesheet" href="{{ Asset::pub('css/debug.css') }}"/>
 @stop
 
 @section('body')

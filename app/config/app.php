@@ -2,6 +2,8 @@
 
 return array(
 
+	'url' => 'http://fluxcore.local/',
+
 	'services'	=> array(
 		'FluxCore\Routing\RoutingServiceProvider',
 		'FluxCore\Wrapper\RequestServiceProvider',

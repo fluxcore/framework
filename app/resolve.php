@@ -20,7 +20,7 @@ try {
 			$code = 404;
 		}
 
-		$output = Controller::make('Error')->index($code, $e);
+		$output = App::make('ErrorController')->index($code, $e);
 	} else {
 		// Output debug.exception view with exception.
 		$output = View::make('debug.exception')->with('e', $e);

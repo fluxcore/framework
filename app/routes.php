@@ -1,6 +1,6 @@
 <?php
 
-Route::add('/', 'get', function()
+Route::get('/', function()
 {
-	return Controller::make('Home')->index();
+	return App::make('HomeController')->index();
 });

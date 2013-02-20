@@ -30,11 +30,10 @@ $app['autoload.alias']->register();
 $app['service'] = new ServiceManager($app);
 $app['service']->add('FluxCore\Config\ConfigServiceProvider');
 
-// Application configuration.
-$appConfig = ConfigFacade::make('app');
+// Setup core.
 {
 	// Setup services.
-	foreach($appConfig->services as $serviceProvider) {
+	foreach($app['config']['app.services'] as $serviceProvider) {
 		$app['service']->add($serviceProvider);
 	}
 
@@ -42,7 +41,7 @@ $appConfig = ConfigFacade::make('app');
 	$app['service']->boot();
 
 	// Setup aliases.
-	$app['autoload.alias']->addAliasMap($appConfig->aliases);
+	$app['autoload.alias']->addAliasMap($app['config']['app.aliases']);
 }
 
 // Require routes.

@@ -2,7 +2,7 @@
 
 return array(
 
-	'debug' => true,
+	'debug' => false,
 
 	'services'	=> array(
 		'FluxCore\Routing\RoutingServiceProvider',

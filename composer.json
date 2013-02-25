@@ -9,11 +9,14 @@
 	],
 	"require": {
 		"fluxcore/components": "dev-master",
+		"illuminate/http": "dev-master",
 		"illuminate/filesystem": "dev-master",
 		"illuminate/events": "dev-master",
 		"illuminate/exception": "dev-master",
 		"illuminate/view": "dev-master",
-		"illuminate/database": "dev-master"
+		"illuminate/database": "dev-master",
+		"symfony/http-foundation": "dev-master",
+		"symfony/http-kernel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

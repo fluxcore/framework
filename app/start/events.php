@@ -4,6 +4,7 @@
 // Imports
 // ------------------------------------------------------------------------- //
 
+use Illuminate\Support\Contracts\RenderableInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,6 +22,21 @@ Event::listen('app.prepareResponse', function($app, $response, Request $request)
 	// we create a new instance of HttpFoundation\Response with the
 	// response data.
 	if (!$response instanceof Response) {
+		// If null was passed as response and BaseController has layout,
+		// we set response as the BaseController layout instance.
+		if (is_null($response) &&
+			!is_null(BaseController::getLayoutInstance())
+		) {
+			$response = BaseController::getLayoutInstance();
+		}
+
+		// If response is instance of Illuminate RenderableInterface, set
+		// response as the render result of the Renderable.
+		if ($response instanceof RenderableInterface) {
+			$response = $response->render();
+		}
+
+		// Create response object.
 		$response = new Response($response);
 	}
 
@@ -31,6 +47,5 @@ Event::listen('app.prepareResponse', function($app, $response, Request $request)
 // 'app.prepareRequest' is wrapped by App::prepareRequest().
 Event::listen('app.prepareRequest', function($app, Request $request)
 {
-	// Perform any manipulation
 	return $request;
 });

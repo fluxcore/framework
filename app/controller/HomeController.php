@@ -11,9 +11,7 @@ class HomeController extends BaseController
 	
 	public function index()
 	{
-		$this->addView('home.index');
+		$this->layout->nest('content', 'home.index');
 		$this->view->share('name', 'World');
-
-		return $this;
 	}
 }

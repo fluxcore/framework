@@ -6,15 +6,13 @@ class ErrorController extends BaseController
 
 	public function index($code, $e)
 	{
-		$this->view->share('e', $e);
-
 		switch($code) {
-			default: $this->addView('error.500'); break;
-			case 404: $this->addView('error.404'); break;
+			case 404: $this->layout->nest('content', 'error.404'); break;
+			default: $this->layout->nest('content', 'error.500'); break;
 		}
 
-		// Do something with $e. (log)
-		
-		return $this;
+		$this->view->share('e', $e);
+
+		// Do something with $e.
 	}
 }

@@ -5,8 +5,8 @@
 // ------------------------------------------------------------------------- //
 
 use FluxCore\Config\ConfigServiceProvider;
+use FluxCore\Exception\ExceptionServiceProvider;
 use Illuminate\Events\EventServiceProvider;
-use Illuminate\Exception\ExceptionServiceProvider;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 
 // ------------------------------------------------------------------------- //

@@ -1,14 +1,18 @@
 <?php
 
 // ------------------------------------------------------------------------- //
-// Application Routes
+// Application Paths
 // ------------------------------------------------------------------------- //
-// This is where you define routes that will handle requests for the
-// application.
+// This file just provides a robust definition of where the application
+// resides in the filesystem.
 // ------------------------------------------------------------------------- //
 
-// GET /
-Route::get('/', function()
-{
-	return App::make('HomeController')->index();
-});
+return array(
+
+	'app' => __DIR__.'/../',
+
+	'base' => __DIR__.'/../../',
+
+	'public' => __DIR__.'/../../public/'
+
+);

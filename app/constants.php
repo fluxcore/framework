@@ -1,3 +1,10 @@
 <?php
 
-// Define any constants here.
+// ------------------------------------------------------------------------- //
+// Application Constants
+// ------------------------------------------------------------------------- //
+// This is where you should define any constants that your application will
+// require.
+// ------------------------------------------------------------------------- //
+
+// define(...);

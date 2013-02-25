@@ -25,8 +25,8 @@
 				@else
 				<td>{{ $trace['function'] }}()</td>
 				@endif
-				<td>{{ $trace['file'] }}</td>
-				<td>{{ $trace['line'] }}</td>
+				@if (isset($trace['file'])) <td>{{ $trace['file'] }}</td> @endif
+				@if (isset($trace['line'])) <td>{{ $trace['line'] }}</td> @endif
 			</tr>
 			@endforeach
 		</table>

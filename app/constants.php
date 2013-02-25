@@ -1,3 +1,3 @@
 <?php
 
-define('FC_PRODUCTION', false);
+// Define any constants here.

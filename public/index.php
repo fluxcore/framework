@@ -1,7 +1,13 @@
 <?php
 
-// Require bootstrap.
-require_once '../bootstrap.php';
+define('FLUXCORE_START', microtime(true));
+define('FLUXCORE_ROOT', __DIR__.'/../');
 
-// Resolve app.
-require_once $app['path'].'resolve.php';
+// Require composer autoload.
+require_once FLUXCORE_ROOT.'/vendor/autoload.php';
+
+// Pass bootstrap on to app.
+$app = require_once FLUXCORE_ROOT.'/app/start/start.php';
+
+// Run app.
+require FLUXCORE_ROOT.'/app/start/run.php';

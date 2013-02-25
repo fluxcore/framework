@@ -9,6 +9,9 @@
 	],
 	"require": {
 		"fluxcore/components": "dev-master",
+		"illuminate/filesystem": "dev-master",
+		"illuminate/events": "dev-master",
+		"illuminate/exception": "dev-master",
 		"illuminate/view": "dev-master",
 		"illuminate/database": "dev-master"
 	},

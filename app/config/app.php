@@ -2,25 +2,26 @@
 
 return array(
 
-	'url' => 'http://fluxcore.local/',
+	'debug' => true,
 
 	'services'	=> array(
 		'FluxCore\Routing\RoutingServiceProvider',
-		'FluxCore\Wrapper\RequestServiceProvider',
-		'Illuminate\Filesystem\FilesystemServiceProvider',
-		'Illuminate\Events\EventServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
 	),
 
+	'autoload' => array(
+		__DIR__.'/../controller',
+		__DIR__.'/../model',
+	),
+
 	'aliases'	=> array(
-		'App'			=> 'FluxCore\Core\ApplicationFacade',
-		'Config'		=> 'FluxCore\Config\ConfigFacade',
-		'Controller'	=> 'FluxCore\Routing\ControllerFacade',
-		'Route'			=> 'FluxCore\Routing\RoutingFacade',
-		'Request'		=> 'FluxCore\Wrapper\RequestFacade',
-		'View'			=> 'FluxCore\Wrapper\ViewFacade',
-		'Model'			=> 'Illuminate\Database\Eloquent\Model',
+		'App' => 'Illuminate\Support\Facades\App',
+		'Route' => 'Illuminate\Support\Facades\Route',
+		'Event' => 'Illuminate\Support\Facades\Event',
+		'ExceptionHandler' => 'FluxCore\Facade\Exception',
+		'View' => 'Illuminate\Support\Facades\View',
+		'Config' => 'Illuminate\Support\Facades\Config',
 	),
 	
 );

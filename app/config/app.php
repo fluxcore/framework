@@ -48,6 +48,7 @@ return array(
 		'Event'				=> 'Illuminate\Support\Facades\Event',
 		'Route'				=> 'Illuminate\Support\Facades\Route',
 		'View'				=> 'Illuminate\Support\Facades\View',
+		'Model'				=> 'Illuminate\Database\Eloquent\Model',
 	),
 	
 );

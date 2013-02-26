@@ -1,7 +1,7 @@
-@extends('layout.debug')
+@extends('fluxcore.debug.layout')
 
 @section('title')
-	@parent {{ get_class($e) }}
+	{{ get_class($e) }}
 @stop
 
 @section('content')

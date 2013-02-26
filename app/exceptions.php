@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 ExceptionHandler::error(function(Exception $e)
 {
 	if (Config::get('app.debug')) {
-		return View::make('debug.exception')->with('e', $e);
+		return View::make('fluxcore.debug.exception')->with('e', $e);
 	}
 
 	return App::make('ErrorController')->index(500, $e);
@@ -35,7 +35,7 @@ ExceptionHandler::error(function(Exception $e)
 ExceptionHandler::error(function(NotFoundHttpException $e)
 {
 	if (Config::get('app.debug')) {
-		return View::make('debug.exception')->with('e', $e);
+		return View::make('fluxcore.debug.exception')->with('e', $e);
 	}
 
 	return App::make('ErrorController')->index(404, $e);

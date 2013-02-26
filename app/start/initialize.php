@@ -6,6 +6,7 @@
 
 use FluxCore\Config\ConfigServiceProvider;
 use FluxCore\Exception\ExceptionServiceProvider;
+use FluxCore\Illuminate\IlluminateFallbackHandler;
 use Illuminate\Events\EventServiceProvider;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 
@@ -34,3 +35,17 @@ $app->initialize(function($app)
 
 	$exceptionService->startHandling($app);
 });
+
+// ------------------------------------------------------------------------- //
+// Application Fallback Handler
+// ------------------------------------------------------------------------- //
+// Here we set the fallback handler of the application.
+// Any methods that are invoked on the application and that doesn't exist
+// is invoked on this object instead.
+// ------------------------------------------------------------------------- //
+
+try {
+	$app->setFallbackHandler(new IlluminateFallbackHandler($app));
+} catch (Exception $e) {
+	exit($e->getMessage());
+}

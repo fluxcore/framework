@@ -3,11 +3,6 @@
 class HomeController extends BaseController
 {
 	protected $layout = 'layout.master';
-
-	protected function setupLayout()
-	{
-		$this->view->share('title', 'Home');
-	}
 	
 	public function index()
 	{

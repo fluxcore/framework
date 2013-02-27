@@ -3,6 +3,7 @@
 use Mockery as M;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 abstract class TestCase extends PHPUnit_Framework_TestCase
 {
@@ -19,8 +20,12 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
 		unset($this->app);
 	}
 
-	public function dispatch($uri, $request)
+	public function dispatch($uri, $method = 'GET', Request $request = null)
 	{
+		if (!$request) {
+			$request = Request::create($uri, $method);
+		}
+
 		// Update this according to the 'app/start/run.php -> App::run(...)' callback.
 		
 		// Prepare request and invoke 'app.before' event.

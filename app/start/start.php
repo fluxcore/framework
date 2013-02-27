@@ -11,6 +11,10 @@ use FluxCore\Core\Facade;
 // Constants.
 // ------------------------------------------------------------------------- //
 
+if (!defined('UNIT_TESTING')) {
+	define('UNIT_TESTING', false);
+}
+
 require_once __DIR__.'/../constants.php';
 
 // ------------------------------------------------------------------------- //
@@ -38,32 +42,35 @@ Facade::setFacadeApplication($app);
 // ------------------------------------------------------------------------- //
 
 // Initialize.
-require_once __DIR__.'/initialize.php';
+require __DIR__.'/initialize.php';
 
 // Services.
-require_once __DIR__.'/services.php';
+require __DIR__.'/services.php';
 
 // Autoload.
-require_once __DIR__.'/autoload.php';
+require __DIR__.'/autoload.php';
 
 // Core events.
-require_once __DIR__.'/events.php';
+require __DIR__.'/events.php';
 
 // Routes.
-require_once __DIR__.'/../bindings.php';
+require __DIR__.'/../bindings.php';
 
 // Events.
-require_once __DIR__.'/../events.php';
+require __DIR__.'/../events.php';
 
 // Events.
-require_once __DIR__.'/../exceptions.php';
+require __DIR__.'/../exceptions.php';
 
 // Routes.
-require_once __DIR__.'/../routes.php';
+require __DIR__.'/../routes.php';
 
 // ------------------------------------------------------------------------- //
 // Other
 // ------------------------------------------------------------------------- //
+
+// Call start event.
+Event::fire('app.start');
 
 // Pass application instance back.
 return $app;

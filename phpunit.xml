@@ -15,4 +15,7 @@
 			<directory>./app/tests/</directory>
 		</testsuite>
 	</testsuites>
+	<php>
+		<const name="UNIT_TESTING" value="true"/>
+	</php>
 </phpunit>

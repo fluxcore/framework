@@ -16,10 +16,14 @@
 		"symfony/http-foundation": "2.2.*",
 		"symfony/http-kernel": "2.2.*"
 	},
+	"require-dev": {
+		"mockery/mockery": "dev-master"
+	},
 	"autoload": {
 		"classmap": [
 			"app/controller",
-			"app/model"
+			"app/model",
+			"app/tests/TestCase.php"
 		]
 	},
 	"minimum-stability": "dev"

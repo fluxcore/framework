@@ -1,18 +1,22 @@
 <?php
 
-class Asset extends FluxCore\Core\Facade
+class Asset extends StaticAppModel
 {
 	public static function pub($path)
 	{
 		$config = self::$app['config']['asset'];
 		$path = ltrim($path, '/\\');
 
-		return (isset($config['public']) && $config['public'] != '')
-			? rtrim($config['public'], '/\\')."/$path"
-			: self::$app['request']->getScheme().'://'.
+		if (isset($config['public']) && $config['public'] != '') {
+			$finalPath = rtrim($config['public'], '/\\')."/$path";
+		} else {
+			$finalPath = self::$app['request']->getScheme().'://'.
 				self::$app['request']->getHttpHost().
 				self::$app['request']->getBasePath().'/'.
 				$path;
+		}
+
+		return $finalPath;
 	}
 
 	public static function cdn($name, $path)

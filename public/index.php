@@ -17,14 +17,19 @@ define('FLUXCORE_START', microtime(true));
 define('FLUXCORE_ROOT', __DIR__.'/../');
 
 // ------------------------------------------------------------------------- //
-// Bootstrap.
+// Composer Autoload
 // ------------------------------------------------------------------------- //
 
-// Require composer autoload.
-require_once FLUXCORE_ROOT.'/vendor/autoload.php';
+require_once __DIR__.'/../../vendor/autoload.php';
 
-// Bootstrap application.
+// ------------------------------------------------------------------------- //
+// Application Bootstrap
+// ------------------------------------------------------------------------- //
+
 $app = require_once FLUXCORE_ROOT.'/app/start/start.php';
 
-// Run app.
+// ------------------------------------------------------------------------- //
+// Application Run
+// ------------------------------------------------------------------------- //
+
 require FLUXCORE_ROOT.'/app/start/run.php';

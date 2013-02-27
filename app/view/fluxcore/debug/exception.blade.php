@@ -6,8 +6,8 @@
 
 @section('content')
 	<h2>fluxcore<span>debug</span></h2>
-
 	<h3>exception<span>message</span></h3>
+	<h3 style="font-size: 18px;">{{ get_class($e) }}</h3>
 	<p>
 		{{ $e->getMessage() }}<br/>
 		<small>{{ $e->getFile() }}:{{ $e->getLine() }}</small>

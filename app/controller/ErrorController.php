@@ -6,6 +6,10 @@ class ErrorController extends BaseController
 
 	public function index($code, $e)
 	{
+		if (Config::get('app.debug')) {
+			return View::make('fluxcore.debug.exception')->with('e', $e);
+		}
+		
 		switch($code) {
 			case 404: $this->layout->nest('content', 'error.404'); break;
 			default: $this->layout->nest('content', 'error.500'); break;

@@ -11,7 +11,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
 
 	public function setUp()
 	{
-		$this->app = require __DIR__.'/../start/start.php';
+		$this->app = require __DIR__.'/../../bootstrap/start.php';
 	}
 
 	public function tearDown()

@@ -26,10 +26,10 @@ require_once __DIR__.'/../vendor/autoload.php';
 // Application Bootstrap
 // ------------------------------------------------------------------------- //
 
-$app = require_once FLUXCORE_ROOT.'/app/start/start.php';
+$app = require_once FLUXCORE_ROOT.'/bootstrap/start.php';
 
 // ------------------------------------------------------------------------- //
 // Application Run
 // ------------------------------------------------------------------------- //
 
-require FLUXCORE_ROOT.'/app/start/run.php';
+require FLUXCORE_ROOT.'/bootstrap/run.php';

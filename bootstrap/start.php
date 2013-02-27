@@ -15,8 +15,6 @@ if (!defined('UNIT_TESTING')) {
 	define('UNIT_TESTING', false);
 }
 
-require_once __DIR__.'/../constants.php';
-
 // ------------------------------------------------------------------------- //
 // Application Setup
 // ------------------------------------------------------------------------- //
@@ -41,6 +39,8 @@ Facade::setFacadeApplication($app);
 // Include any additional bootstrap files here.
 // ------------------------------------------------------------------------- //
 
+// - Core Bootstrap
+
 // Initialize.
 require __DIR__.'/initialize.php';
 
@@ -53,17 +53,22 @@ require __DIR__.'/autoload.php';
 // Core events.
 require __DIR__.'/events.php';
 
-// Routes.
-require __DIR__.'/../bindings.php';
+// - Application Bootstrap
 
-// Events.
-require __DIR__.'/../events.php';
-
-// Events.
-require __DIR__.'/../exceptions.php';
+// Constants.
+require __DIR__.'/../app/constants.php';
 
 // Routes.
-require __DIR__.'/../routes.php';
+require __DIR__.'/../app/bindings.php';
+
+// Events.
+require __DIR__.'/../app/events.php';
+
+// Events.
+require __DIR__.'/../app/exceptions.php';
+
+// Routes.
+require __DIR__.'/../app/routes.php';
 
 // ------------------------------------------------------------------------- //
 // Other

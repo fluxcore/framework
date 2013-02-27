@@ -9,10 +9,10 @@
 
 return array(
 
-	'app' => __DIR__.'/../',
+	'app' => __DIR__.'/../app/',
 
-	'base' => __DIR__.'/../../',
+	'base' => __DIR__.'/../',
 
-	'public' => __DIR__.'/../../public/'
+	'public' => __DIR__.'/../public/'
 
 );

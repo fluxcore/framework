@@ -22,6 +22,9 @@ if (!defined('UNIT_TESTING')) {
 // Create application instance.
 $app = new Application;
 
+// Bind the application instance to itself.
+$app['app'] = $app;
+
 // Bind paths.
 $app->bindPaths(require __DIR__.'/paths.php');
 

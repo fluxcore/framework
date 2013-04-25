@@ -13,6 +13,8 @@ return array(
 
 	'base' => __DIR__.'/../',
 
-	'public' => __DIR__.'/../public/'
+	'public' => __DIR__.'/../public/',
+	
+	'storage' => __DIR__.'/../app/storage/',
 
 );
